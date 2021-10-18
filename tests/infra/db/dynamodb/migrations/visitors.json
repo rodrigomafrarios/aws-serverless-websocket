@@ -1,0 +1,25 @@
+{
+  "resources": [{
+    "Type": "AWS::DynamoDB::Table",
+    "Properties": {
+      "TableName": "test-visitors",
+      "BillingMode": "PAY_PER_REQUEST",
+      "KeySchema": [
+        {
+          "AttributeName": "ip",
+          "KeyType": "HASH"
+        }
+      ],
+      "AttributeDefinitions": [
+        {
+          "AttributeName": "ip",
+          "AttributeType": "S"
+        }
+      ],
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      }
+    }
+  }]
+}
